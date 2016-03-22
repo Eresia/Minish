@@ -7,7 +7,9 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-#define NORMAL 0
-#define PROCESS 1
+#define NO_ERR 0
+#define PROCESS_ERR 1
+#define READ_ERR 2
+
 
 #endif

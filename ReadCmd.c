@@ -9,10 +9,9 @@ char** readCmd(){
 	read(ENTER, cmd, SIZE_READ_MAX);
 
 	cmd[strlen(cmd)-1] = '\0';
-
 	param = strtok(cmd, " ");
-
 	i = 0;
+	
 	while((param != NULL) && (i < NB_ARG_MAX)){
 		result[i] = param;
 		param = strtok(NULL, " ");
