@@ -7,5 +7,7 @@ Compiler le programme avec la commande "make"
 Lancer l'exécutable "minish"
 Executer votre commande
 
-##Bonus géré :
-Le "&"
+#Utile
+Historique du programme avec la commande "hist"
+Possibilité de lancer le programme en tache de fond avec "&" en fin de commande
+Quitter le programme avec la commande "quit"
