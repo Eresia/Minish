@@ -6,8 +6,11 @@ char** readCmd(){
 	char** result = calloc(NB_ARG_MAX+1, sizeof(char*));
 	int i;
 
-	//On lit la console
-	read(ENTER, cmd, SIZE_READ_MAX);
+	//Tant qu'on a pas de commande
+	do{
+		//On lit la console
+		read(ENTER, cmd, SIZE_READ_MAX);
+	} while(strlen(cmd) <= 1);
 
 	//On enlève le retour chariot
 	cmd[strlen(cmd)-1] = '\0';
