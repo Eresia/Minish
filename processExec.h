@@ -1,13 +1,8 @@
 #ifndef PROCESSEXEC
 #define PROCESSEXEC
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <signal.h>
-#include <sys/wait.h>
+#include "global.h"
 
-int proccesExec(char* commande);
+int proccesExec(char** commande);
 
 #endif
