@@ -1,6 +1,6 @@
 #include "ReadCmd.h"
 
-char** readCmd(){
+char** readCmd(int* background){
 	char* cmd = calloc(SIZE_READ_MAX+1, sizeof(char));
 	char* param;
 	char** result = calloc(NB_ARG_MAX+1, sizeof(char*));
@@ -22,8 +22,13 @@ char** readCmd(){
 	//Tant qu'il reste des paramètres et qu'on ne dépasse pas le nombre d'arguments
 	while((param != NULL) && (i < NB_ARG_MAX)){
 
-		//On ajoute le paramètre
-		result[i] = param;
+		if(!strcmp(param, "&")){
+			*background = 1;
+		}
+		else{
+			//On ajoute le paramètre
+			result[i] = param;
+		}
 
 		//On en lit un nouveau
 		param = strtok(NULL, " ");

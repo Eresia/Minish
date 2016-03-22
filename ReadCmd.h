@@ -12,6 +12,6 @@
 
 	#define QUIT(X) (strcmp(X, "quit") == 0)
 
-	char** readCmd();
+	char** readCmd(int* background);
 
 #endif

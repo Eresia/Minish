@@ -6,9 +6,10 @@ int main(int argc, char** argv){
 	int result = 0;
 	char** cmd;
 	pid_t pidFils;
+	int background = 0;
 
 	//On lit la commande
-	cmd = readCmd();
+	cmd = readCmd(&background);
 
 	//Tant qu'on a pas quitté ou qu'il n'y a pas d'erreur
 	while(!QUIT(cmd[0]) && (result >= NO_ERR)){
@@ -19,7 +20,7 @@ int main(int argc, char** argv){
 		//Si pas d'erreur
 		if(result > 0){
 			//On lit une nouvelle commande
-			cmd = readCmd();
+			cmd = readCmd(&background);
 
 			pidFils = result;
 
@@ -28,7 +29,12 @@ int main(int argc, char** argv){
 				result = READ_ERR;
 			}
 		}
-		while(waitpid(pidFils,0,0)!=-1);
+		if(!background){
+			while(waitpid(pidFils,0,0)!=-1);
+		}
+		else{
+			background = 0;
+		}
 	}
 
 	return result;
