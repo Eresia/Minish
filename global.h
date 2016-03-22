@@ -8,5 +8,6 @@
 #include <sys/wait.h>
 
 #define NORMAL 0
+#define PROCESS 1
 
 #endif

@@ -3,6 +3,6 @@
 
 #include "global.h"
 
-int proccesExec(char** commande);
+int proccesExec(char** commande); //Crée un processus qui executeras la commande
 
 #endif
