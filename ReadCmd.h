@@ -10,6 +10,8 @@
 	#define NB_ARG_MAX 20
 	#define ENTER 0
 
+	#define QUIT(X) (strcmp(X, "quit") == 0)
+
 	char** readCmd();
 
 #endif
