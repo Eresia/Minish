@@ -4,10 +4,12 @@
 int main(int argc, char** argv){
 
 	char** cmd = readCmd();
-	while(cmd[0][0] != EOF){
-		proccesExec(cmd);
+	int result = 0;
+
+	while((cmd[0][0] != EOF) && (result == 0)){
+		result = proccesExec(cmd);
 		cmd = readCmd();
 	}
 
-	return 0;
+	return result;
 }
