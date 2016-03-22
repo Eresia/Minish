@@ -11,7 +11,7 @@ int proccesExec(char** commande){
 			printf("Execution de %s \n", cmd);
 			execvp(cmd, param); //Execution de la commande
 			printf("Le processus de PID %d à exécuté la commande %s\n", getpid(), cmd);
-			//exit(NORMAL);
+			exit(NORMAL);
 	}
 	return NORMAL;
 }
