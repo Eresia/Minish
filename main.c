@@ -3,12 +3,28 @@
 
 int main(int argc, char** argv){
 
-	char** cmd = readCmd();
 	int result = 0;
+	char** cmd;
 
-	while(!QUIT(cmd[0]) && (result == 0)){
+	//On lit la commande
+	cmd = readCmd();
+
+	//Tant qu'on a pas quitté ou qu'il n'y a pas d'erreur
+	while(!QUIT(cmd[0]) && (result == NO_ERR)){
+
+		//On éxecute la commande
 		result = proccesExec(cmd);
-		cmd = readCmd();
+
+		//Si pas d'erreur
+		if(result == NO_ERR){
+			//On lit une nouvelle commande
+			cmd = readCmd();
+
+			//Si erreur dans la lecture
+			if(cmd[0] == NULL){
+				result = READ_ERR;
+			}
+		}
 	}
 
 	return result;
