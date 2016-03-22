@@ -1,8 +1,13 @@
-//#include "test.h"
+#include "ReadCmd.h"
+#include "processExec.h"
 
 int main(int argc, char** argv){
 
-	//test();
+	char** cmd = readCmd();
+	while(cmd[0][0] != EOF){
+		proccesExec(cmd);
+		cmd = readCmd();
+	}
 
 	return 0;
 }
