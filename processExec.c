@@ -3,7 +3,8 @@
 int proccesExec(char** commande){
 	char* cmd = *commande;
 	char** param = commande;
-	switch(fork()){
+	pid_t pid;
+	switch(pid = fork()){
 		case -1 :
 			perror("Erreur : Création de processus");
 			return PROCESS_ERR;
@@ -14,6 +15,8 @@ int proccesExec(char** commande){
 			execvp(cmd, param); //Execution de la commande
 			printf("Le processus de PID %d à exécuté la commande %s\n", getpid(), cmd);
 			exit(NO_ERR);
+
+			// Fin du fils
 	}
-	return NO_ERR;
+	return pid; //Envoi du pid du fils au père
 }

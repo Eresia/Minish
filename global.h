@@ -8,8 +8,8 @@
 #include <sys/wait.h>
 
 #define NO_ERR 0
-#define PROCESS_ERR 1
-#define READ_ERR 2
+#define PROCESS_ERR -1
+#define READ_ERR -2
 
 
 #endif
