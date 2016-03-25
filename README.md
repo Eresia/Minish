@@ -1,5 +1,5 @@
 #L3 Informatique - TP de Système d'exploitation
-Simulation d'un mini shell en C
+Simulation d'un mini shell en C (Défi : 3 heures)
 
 ##Installation
 Compiler le programme avec la commande "make"
